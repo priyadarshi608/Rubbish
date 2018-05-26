@@ -44,14 +44,4 @@ public class Cache<K, V> implements Serializable {
 		}
 	}
 	
-	/* Return the HashMap of key vs value for testing */
-	public HashMap<K, V> getHashMap() {
-		HashMap<K, V> h = new HashMap<K, V>();
-		for (HashMap.Entry<K, Node<K, V> > entry : location.entrySet()) {
-		    K key = entry.getKey();
-		    V value = entry.getValue().getVal();
-		    h.put(key, value);
-		}
-		return h;
-	}
 }

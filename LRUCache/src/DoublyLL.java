@@ -78,40 +78,4 @@ public class DoublyLL<K, V> implements Serializable {
 		System.out.println();
 	}
 	
-	/* Returns list of all keys for testing */
-	public List<K> getKeyList() {
-		List<K> l = new ArrayList<K>();
-		Node<K, V> temp = leastRecent;
-		while(temp != null) {
-			l.add(temp.getKey());
-			temp = temp.getNext();
-		}
-		return l;
-	}
-	
-	/* Returns list of all values for testing */
-	public List<V> getValueList() {
-		List<V> l = new ArrayList<V>();
-		Node<K, V> temp = leastRecent;
-		while(temp != null) {
-			l.add(temp.getVal());
-			temp = temp.getNext();
-		}
-		return l;
-	}
-	
-	public static void main(String[] args) {
-		// Manual Testing
-		DoublyLL<Integer, String> l = new DoublyLL<Integer, String>();
-		HashMap<Integer, Node<Integer, String> > h = new HashMap<Integer, Node<Integer, String> >();
-		for(int i=1; i<=10; i++) {
-			Node<Integer, String> node = new Node<Integer, String>(i, Integer.toString(i));
-			h.put(i, node);
-			l.insert(node);
-			l.print();
-		}
-		l.delete(h.get(10));
-		l.delete(h.get(1));
-		l.print();
-	}
 }
