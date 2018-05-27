@@ -10,7 +10,7 @@ public final class Board {
 		makeSnakes ( snakes );
 	}
 	private void makeSquares ( int numSquares ) {
-		System . out . println ( " There are " + numSquares + " squares " );
+		System.out.println ( " There are " + numSquares + " squares " );
 		for ( int position =0 ; position < numSquares ; position ++) {
 			Square square = new Square ( position , this );
 			squares . add ( square );
@@ -42,10 +42,10 @@ public final class Board {
 			assert transport <0 : " In snake , destination after origin " ;
 			assert ( toPosition > 0) && ( toPosition < numberOfSquares () -1);
 			assert ( fromPosition < numberOfSquares () -1) && ( fromPosition >0);
-			System . out . println ( " snake from " + ( fromPosition +1)
+			System.out.println ( " snake from " + ( fromPosition +1)
 					+ " to " + ( toPosition +1));
 			Square snakeSquare = squares . get ( fromPosition );
-			snakeSquare . setSquareRole ( new SnakeRole ( snakeSquare , transport ));
+			snakeSquare . setSquareRole ( new SnakeSquareRole ( snakeSquare , transport ));
 		}
 	}
 	private void makeLadders ( int [][] ladders ) {
@@ -60,7 +60,7 @@ public final class Board {
 			System . out . println ( " ladder from " + ( fromPosition +1)
 					+ " to " + ( toPosition +1));
 			Square ladderSquare = squares . get ( fromPosition );
-			ladderSquare . setSquareRole ( new LadderRole ( ladderSquare , transport ));
+			ladderSquare . setSquareRole ( new LadderSquareRole ( ladderSquare , transport ));
 		}
 	}
 }

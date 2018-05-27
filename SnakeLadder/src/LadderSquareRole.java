@@ -1,13 +1,13 @@
-public final class SnakeRole extends SquareRole {
+public final class LadderSquareRole extends SquareRole {
 	private int transport ;
-	public SnakeRole ( Square s , int t ) {
+	public LadderSquareRole ( Square s , int t ) {
 		super ( s );
-		assert t <0 : " A snake shift must be negative " ;
+		assert t >0 : " A ladder shift must be positive " ;
 		transport = t ;
 	}
 	@Override
 	public Square landHereOrGoHome () {
-		System . out . println ( " snake from " + ( square . getPosition ()+1)
+		System . out . println ( " ladder from " + ( square . getPosition ()+1)
 				+ " to " + ( destination (). getPosition ()+1));
 		return destination (). landHereOrGoHome ();
 	}
