@@ -5,17 +5,17 @@ public class LRUCacheDemo {
 		LRUCache<Integer, String> obj = new LRUCache<Integer, String>(3);
 		obj.put(1, "First");
 		System.out.println(obj.get(1));		
-		obj.getList().print();
+		obj.print();
 		obj.put(2, "Second");			
-		obj.getList().print();
+		obj.print();
 		System.out.println(obj.get(2));			
-		obj.getList().print();
+		obj.print();
 		obj.get(2);
-		obj.getList().print();
+		obj.print();
 		obj.put(3, "Third");
-		obj.getList().print();
+		obj.print();
 		obj.get(1);
-		obj.getList().print();
+		obj.print();
 	}
 
 }
