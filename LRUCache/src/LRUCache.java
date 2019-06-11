@@ -55,9 +55,9 @@ public class LRUCache<K, V> implements Serializable {
 				Node<K, V> leastRecent = list.getLRU(); // Get least recently used node
 				K leastRecentKey = leastRecent.getKey();
 				cache.delete(leastRecentKey); // Delete least recently used from cache
+				list.delete(leastRecent); // Update list
 				Node<K, V> newNode = new Node<K, V>(key, val);
 				cache.insert(key, newNode); // Insert new node into cache
-				list.delete(leastRecent); // Update list
 				list.insert(newNode);
 			}
 			else { // Cache has space
@@ -66,23 +66,6 @@ public class LRUCache<K, V> implements Serializable {
 				list.insert(newNode); // Insert into list
 			}
 		}
-	}
-	
-
-	public static void main(String args[]) {
-		// Manual Testing
-		LRUCache<Integer, String> obj = new LRUCache<Integer, String>(3);
-		obj.put(1, "First");
-		System.out.println(obj.get(1));		
-		obj.list.print();
-		obj.put(2, "Second");			
-		obj.list.print();
-		System.out.println(obj.get(2));			
-		obj.list.print();
-		obj.get(2);
-		obj.list.print();
-		obj.put(3, "Third");
-		obj.list.print();
 	}
 
 }
