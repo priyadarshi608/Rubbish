@@ -14,6 +14,8 @@ public class LRUCacheDemo {
 		obj.getList().print();
 		obj.put(3, "Third");
 		obj.getList().print();
+		obj.get(1);
+		obj.getList().print();
 	}
 
 }
