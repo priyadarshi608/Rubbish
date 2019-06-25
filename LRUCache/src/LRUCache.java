@@ -26,9 +26,9 @@ public class LRUCache<K, V> implements Serializable {
 		if(cache.containsKey(key)) { // Key present in cache
 			V retVal = cache.get(key);
 			list.remove(key); // Delete from list
-			cache.remove(key); // Delete from cache
+//			cache.remove(key); // Delete from cache
 			list.add(key); // Insert into list as the Most recently used
-			cache.put(key, retVal); // Update the cache
+//			cache.put(key, retVal); // Update the cache
 			return retVal;
 		}
 		return null; // Key not present in the cache

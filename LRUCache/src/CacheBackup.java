@@ -24,7 +24,10 @@ public class CacheBackup {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			fos.close();
 		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
@@ -48,8 +51,11 @@ public class CacheBackup {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			fis.close();
 		} catch (FileNotFoundException e1) {
 			e1.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 		return null;
 	}
