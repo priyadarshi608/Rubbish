@@ -33,7 +33,8 @@ public class CacheBackup {
 	}
 	
 	/* Recovers and returns the LRUCache object from the file */
-	public static LRUCache recoverCache(String filename) { 
+	public static LRUCache recoverCache(String filename) {
+		LRUCache obj = null;
 		FileInputStream fis;
 		try {
 			fis = new FileInputStream(filename);
@@ -41,13 +42,11 @@ public class CacheBackup {
 			try {
 				ois = new ObjectInputStream(fis);
 				try {
-					LRUCache obj = (LRUCache) ois.readObject();
+					obj = (LRUCache) ois.readObject();
 					ois.close();
-					return obj;
 				} catch (ClassNotFoundException e) {
 					e.printStackTrace();
 				}
-				ois.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -57,7 +56,7 @@ public class CacheBackup {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return obj;
 	}
 
 }
