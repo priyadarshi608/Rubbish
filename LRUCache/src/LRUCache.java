@@ -1,6 +1,6 @@
 /* LRUCache class uses DoublyLL and Cache classes to provide:
  * 	i. LRU cache apis of get and put
- * 	
+ * 	ii. print()
 */
 
 import java.io.Serializable;
