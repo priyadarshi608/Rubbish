@@ -3,7 +3,7 @@ import java.util.List;
 
 /**
   * Decleare public API for Vending Machine
-  * @author Javin Paul
+  * @author Javin Paula
   */
 public interface VendingMachine {   
     public long selectItemAndGetPrice(Item item);
